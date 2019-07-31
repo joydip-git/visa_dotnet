@@ -1,0 +1,227 @@
+.NET Framework - framework
+C# - Language, VB.NET, VC++.NET, VJ#.NET, VF#.NET,....
+ASP.NET
+ADO.NET
+Visual Studio - IDE
+
+COM: Component object Model
+VB, VC++, VFoxpro,....
+ASP
+ADO
+Visual Studio
+
+Year	FV	VV	C#				CLR	
+2002	1.0	7.0	1.0				1.0
+2003	1.1	7.1	1.1				1.1
+2005	2.0	8.0	2.0				2.0
+2007	3.0	---	3.0 [WCF + WPF + WF]		2.0
+2008	3.5	9.0	3.5 [LINQ + ASP.NET AJAX]	2.0
+2010	4.0	10.0	4.0 				4.0
+2012	4.5.1	2012	4.5				4.0
+2013	4.6.1	2013	5				4.0
+2015	4.7	2015	6				4.0
+2017	4.7.1	2017	7				4.0
+2019	4.8	2019	8				4.0
+
+.NET Framework:
+
+	a. Base/Framework class library
+	b. CLR (Common Language Runtime)
+	c. ASP.NET
+	d. ADO.NET (ActiveX Data Object)
+
+
+
+	ASP.NET
+
+	Home.aspx --> HTML + ASP.NET Server controls
+	Home.aspx.cs --> C#
+
+	ASP.NET XML Web Service
+	WCF
+
+	ASP.NET MVC
+	ASP.NET MVC Web (Razor) page + ASP.NET MVC Web API
+
+	ASP.NET MVC Core
+	Razor + Web API Core
+
+	Step-1: (pure compilation)
+	Source code --(compiler)--> IL Code [output file (.exe/.dll) -- assembly -- PE (32bit/64bit)]
+	Assembly: 
+	a. IL Code
+	b. Manifest/Assembly Metadata: Info about applicatin (dependency on other assemblies, name, module tyep, version no, etc....)
+	c. Type Metadata/Metainfo: information about types and its members
+	i. types decalred in this assembly (full info)
+	ii. types used from other (Dependent) assembly (partial info)
+	iii. in built type that is used indirectly/directly
+
+	d. Headers:
+		i. windows header/PE (optional) header: whic O/S dlls will be used by CLR, console
+		ii. CLR Header: framework version, digital signature
+
+	e. Resources: (optional)
+
+
+	ILDASM: Intermediate Language Disassembler
+
+	Step-2: (runtime)
+	IL code (assembly) -- JIT compiler [CLR] --- > MLC
+		
+ 
+C#:
+data types:
+----------------------
+	value type			reference type
+--------------------------------------------------------------------
+built-in	user-defined	built-in	user-defined
+---------------------------------------------------------------------
+byte (1)/Byte	struct		object		class
+sbyte(1)/SByte  enum		Array		interface
+short (2)/Int16			string		delegate
+ushort(2)/UInt16 					event
+int (4)
+uint (4)
+long (8)
+ulong (8)
+
+float/Float
+decimal/Decimal
+double/Double
+
+char
+bool/Boolean
+
+DateTime  DateTime dt = new DateTime(2019,7,27);
+	  DateTime dt1 = DateTime.Now;
+TimeSapn  TimeSpan ts = dt1.Subtract(dt); // ts = dt1 - dt; 
+
+Nullable<T> Nullable<decimal> d = null; d=12.34M; decimal? d = null;
+	    if(d.HasValue)
+		c.wl(d.Value);
+
+int a = 10; int b =20;
+int c = a>b?a:b;
+
+switch(choice)
+{
+   case 1:
+       break;
+
+   default:
+	break;
+}
+
+if()
+{
+}
+else{
+}
+
+while(){}
+do{
+}while();
+
+for(int a = 0; a<5;a++)
+{
+
+}
+foreach(int item in arr)
+{
+
+}
+
+
+class Program{
+Main(){
+}
+}
+
+Console.Read()/ReadLine/ReadKey
+
+string val1 = Console.ReadLine();
+int x = Convert.ToInt32(val1);
+//or
+int x = int.Parse(val1);
+
+C# (int)		VB (Integer)
+
+       IL (Int32)
+
+struct Int32
+{
+   Parse(string str)
+}
+
+access specifiers:
+type (class): public and internal (default)
+members (class): public, private, protected, internal and protected internal
+
+name, id, basicpay, dapay, hrapay
+
+class & object
+constructor
+	static ctor, default ctor, parameterized ctor
+keywords: readonly, static, const, base, this etc.
+properties
+methods
+polymorphism: compile-time and runtime (dynamic)
+keywords: virtual and override
+abstract class:
+keywords: abstract and override
+enum: declaration, use etc.
+CLR acrhitecture: Type class
+
+OOP:
+keywords: sealed
+interface and its implmentation
+DI and IOC
+Has-a relationship
+
+methods and arguments:
+pass-by-value, pass-by-ref, pass-by-out
+[keywords: ref and out]
+new features (4.0):
+	optional arguments with default value
+	named arguments
+array: param array
+keywords: params
+
+basics:
+structure: declaration and use
+
+sln: ShapeAreaApp
+app name: ShapeAreaApp.Entities (lib)
+interface: IShapeArea--CalculateArea():double
+classes: circle:IShapeArea, triangle:IShapeArea
+members of classes:
+default ctor
+parameterized ctor
+data members
+interface method
+enum: ShapeType
+
+app name:ShapeAreaApp.IOC (lib)
+Container, Create(ShapeType):IShapeArea-->create instance of shape based on enum value
+
+app name: ShapeAreaApp.UserInterface (console)
+Program-->Main()
+addiotional class: utility
+display menu
+get choice
+based on that create object of shape using IOC
+calculate area
+print the same
+
+
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
+
+
+
+
+
+
+
+
+
