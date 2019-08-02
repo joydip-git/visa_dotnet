@@ -213,15 +213,85 @@ based on that create object of shape using IOC
 calculate area
 print the same
 
+generic classes
+ - generic methods
+ - generic classes
+ - generic interfaces
+
+additional: MEF (implementation of DI)
+
+Object class methods
+ - GetHashCode
+ - Equals
+ - ToString
+ - Equality between objects using GetHashCode and Equals
+
+Comparsion between objects
+ - IComparable & IComparable<T> [System]
+   Implemented in entities
+   Useful for Sort() method of List<T>
+ - IComparer [System.Collections] & IComparer<T> [System.Collections.Generic]
+   Implemented into a comparer class for comparsion logic
+   Useful for Sort(IComparer<T> comp) of List<T>
+   also useful for choice based sorting
+
+Internalization of comparison logic: when IComparable/IComaparable<T> is implemented in the entity
+
+Externalization of comparison logic: when IComparer/IComaparer<T> is implemented in a separate comparer class, NOT in the entity
+
+Conversion:
+a. VT <--> VT: 
+implicit conversion:
+explicit converion: casting and Convert class methods
+
+b. RT <--> RT
+implicit conversion
+explicit conversion: casting and as operator
+
+c. VT <--> RT
+a. boxing (implicit)[vt-->rt]
+b. unboxing (explicit) [ vt<--rt]
+
+collection classes 
+- ArrayList
+
+generic collection classes
+- List<T>
+- HashSet<T>
 
 
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
+1. Login   
+   a. Borrow a book
+      i. view list of books [id, name]
+         select a book id
+         <book-name> has been borrowed by <user-name> on <borrow-date> and its tentative return date is <return-date>
+         
+   b. Return a book
+      list of books borrowed by you: .....
+      enter book id:
+      <book-name> has been returned by <user-name> on <return-date>
+      
+2. Exit
 
+name, userid, pwd
 
-
-
-
-
-
+StreamReader reader = new StramReader(path);
+List<User> users = new List<User>();
+while(reader.End...)
+{
+   string data = null;
+   if((data = reader.ReadLine())!=string.Empty)
+   {
+       string[] values =data.Split(';');
+       User user = new User
+       {
+         Name = values[0],
+         UserId = values[1],
+         Password = values[2]
+       }; 
+       users.Add(user);
+   }
+}
+reader.Close();
 
 
